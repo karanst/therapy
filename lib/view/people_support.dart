@@ -17,7 +17,7 @@ class PeopleSupport extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: colors.textFieldClr,
+      // backgroundColor: colors.textFieldClr,
       appBar:  customAppBar("People I Support", context),
       body: ListView.builder(
           itemCount: supportedPeople.length,

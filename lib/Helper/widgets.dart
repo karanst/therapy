@@ -31,7 +31,7 @@ Text secTitleText(String data, context, double size ){
     style:  TextStyle(
       fontSize: size,
       fontWeight: FontWeight.bold,
-      color: colors.secondary
+      color: Theme.of(context).colorScheme.secColor
       //Theme.of(context).colorScheme.fontColor,
     ),);
 }

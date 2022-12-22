@@ -468,8 +468,8 @@ Widget jobDetailsCard(context, model, i,  onPress, bool isNote) {
                     child: Center(
                       child: Text(
                         "${model[i]['day']}",
-                        style: const TextStyle(
-                            color: colors.secondary,
+                        style:  TextStyle(
+                            color: Theme.of(context).colorScheme.secColor,
                             fontWeight: FontWeight.w600,
                             fontSize: 20),
                       ),
@@ -529,21 +529,21 @@ Widget jobDetailsCard(context, model, i,  onPress, bool isNote) {
                     onPressed: onPress,
                     child: Row(
                       children:  [
-                        isNote ?  const Text(
+                        isNote ?   Text(
                           "View Notes",
-                          style: TextStyle(color: colors.secondary,
+                          style: TextStyle(color: Theme.of(context).colorScheme.secColor,
                           fontWeight: FontWeight.w600),
                         ):
-                       const Text(
+                        Text(
                           "Submit Notes",
                           style: TextStyle(
-                              color: colors.secondary,
+                              color: Theme.of(context).colorScheme.secColor,
                               fontWeight: FontWeight.w600
                           ),
                         ),
-                       const Icon(
+                        Icon(
                           Icons.arrow_forward,
-                          color: colors.secondary,
+                          color: Theme.of(context).colorScheme.secColor,
                           size: 18,
                         )
                       ],
@@ -738,8 +738,8 @@ Widget availableCardWidget(context, model, i) {
                     child: Center(
                       child: Text(
                         "${model[i]['day']}",
-                        style: const TextStyle(
-                            color: colors.secondary,
+                        style:  TextStyle(
+                            color: Theme.of(context).colorScheme.secColor,
                             fontWeight: FontWeight.w600,
                             fontSize: 16),
                       ),

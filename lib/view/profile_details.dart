@@ -161,7 +161,7 @@ class ProfileDetails extends StatelessWidget {
                       child: Text(
                         "JW",
                         style: TextStyle(
-                            color: colors.secondary,
+                            color: Theme.of(context).colorScheme.secColor,
                             fontSize: 35,
                             fontWeight: FontWeight.w500),
                       ),

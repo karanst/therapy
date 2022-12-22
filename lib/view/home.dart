@@ -252,10 +252,10 @@ class _HomeState extends State<Home> {
                 TextSpan(text:  name != null ?
                 "$name"
                     :"Sawan Shakya",
-                  style: const TextStyle(
+                  style:  TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
-                    color: colors.secondary
+                    color: Theme.of(context).colorScheme.secColor
                 ),),
 
               ],
@@ -316,7 +316,9 @@ class _HomeState extends State<Home> {
               //circleRadius,
               height: 60,
               //circleRadius,
-              decoration: const ShapeDecoration(shape: CircleBorder(), color: Colors.transparent),
+              decoration: const ShapeDecoration(
+                  shape: CircleBorder(),
+                  color: Colors.transparent),
               child: Padding(
                 padding: EdgeInsets.all(circleBorderWidth),
                 child: const DecoratedBox(
@@ -515,10 +517,14 @@ class _HomeState extends State<Home> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        secTitleText(
-                            name != null ?
-                            "$name"
-                            :"Sawan Shakya", context, 16),
+                        Text(name != null ?
+                        "$name"
+                            :"Sawan Shakya",
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: colors.secondary,
+                          ),) ,
                        const Text("7896546544",
                           style: TextStyle(
                             fontSize: 14,
@@ -621,7 +627,7 @@ class _HomeState extends State<Home> {
                           border: Border.all(color: colors.secondary),
                           color: colors.whit
                       ),
-                      child: const Icon(
+                      child:  const Icon(
                           Icons.notifications,
                           color: colors.secondary)
                     // Icon(Icons.menu_outlined, color: appColorWhite,),

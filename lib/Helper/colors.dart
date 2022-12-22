@@ -34,6 +34,8 @@ extension colors on ColorScheme {
 
   Color get btnColor =>
       this.brightness == Brightness.dark ? whiteTemp : primary;
+  Color get secColor =>
+      this.brightness == Brightness.dark ? colors.whit :const  Color(0xff2F6248);
 
   Color get lightWhite =>
       this.brightness == Brightness.dark ? darkColor : const Color(0xffffffff);

@@ -80,17 +80,29 @@ class _AvailabilityState extends State<Availability> {
       padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10, bottom: 10),
       child: Column(
         children: [
-          Container(
-            height: 200,
-            width: MediaQuery.of(context).size.width,
+          Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10)
+            ),
             child: SfDateRangePicker(
               selectionMode: DateRangePickerSelectionMode.range,
               initialDisplayDate: DateTime.now(),
               initialSelectedDate: DateTime.now(),
-              rangeSelectionColor: colors.red,
+              selectionColor: colors.primary,
+              startRangeSelectionColor: colors.primary,
+              endRangeSelectionColor: colors.primary,
+              rangeSelectionColor: colors.primary,
+              rangeTextStyle: const TextStyle(color: Colors.white, fontSize: 14),
               enablePastDates: false,
+              headerHeight: 50,
               headerStyle: const DateRangePickerHeaderStyle(
                 backgroundColor: colors.primary,
+                  textAlign: TextAlign.center,
+                  textStyle: TextStyle(
+                      color: colors.whit,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600
+                  )
               ),
             ),
           ),
@@ -244,17 +256,29 @@ class _AvailabilityState extends State<Availability> {
       padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10, bottom: 10),
       child: Column(
         children: [
-          Container(
-            height: 200,
-            width: MediaQuery.of(context).size.width,
+          Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10)
+            ),
             child: SfDateRangePicker(
               selectionMode: DateRangePickerSelectionMode.range,
               initialDisplayDate: DateTime.now(),
               initialSelectedDate: DateTime.now(),
-              rangeSelectionColor: colors.red,
+              selectionColor: colors.primary,
+              startRangeSelectionColor: colors.primary,
+              endRangeSelectionColor: colors.primary,
+              rangeSelectionColor: colors.primary,
+              rangeTextStyle: const TextStyle(color: Colors.white, fontSize: 14),
               enablePastDates: false,
+              headerHeight: 50,
               headerStyle: const DateRangePickerHeaderStyle(
                 backgroundColor: colors.primary,
+                textAlign: TextAlign.center,
+                textStyle: TextStyle(
+                  color: colors.whit,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600
+                )
               ),
             ),
           ),
@@ -288,7 +312,7 @@ class _AvailabilityState extends State<Availability> {
               child: Column(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 0.0),
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: 50,

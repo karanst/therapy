@@ -91,7 +91,7 @@ class _ScheduleState extends State<Schedule> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: colors.textFieldClr,
+      // backgroundColor: colors.textFieldClr,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: colors.primary,

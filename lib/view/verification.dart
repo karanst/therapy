@@ -92,18 +92,18 @@ class _VerificationState extends State<Verification> {
   }
   @override
   Widget build(BuildContext context) {
-    const focusedBorderColor = colors.secondary;
+    var focusedBorderColor = Theme.of(context).colorScheme.secColor;
     //Color.fromRGBO(23, 171, 144, 1);
     const fillColor = Color.fromRGBO(243, 246, 249, 0);
-    const borderColor = colors.secondary;
+    var borderColor = Theme.of(context).colorScheme.secColor;
     // Color.fromRGBO(23, 171, 144, 0.4);
 
     final defaultPinTheme = PinTheme(
       width: 56,
       height: 56,
-      textStyle: const TextStyle(
+      textStyle:  TextStyle(
         fontSize: 22,
-        color: colors.fntClr,
+        color:Theme.of(context).colorScheme.fontColor,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),

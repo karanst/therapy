@@ -63,11 +63,11 @@ class Visits extends StatelessWidget {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfileDetails()));
                       },
                       child:
-                      const Text("View Profile",style:
+                       Text("View Profile",style:
                       TextStyle(
                           fontSize: 14,
                           decoration: TextDecoration.underline,
-                          color: colors.secondary,
+                          color: Theme.of(context).colorScheme.secColor,
                         fontWeight: FontWeight.w600,
                       ),)),
                 ),

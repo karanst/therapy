@@ -363,21 +363,21 @@ class _AddScheduleState extends State<AddSchedule> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        const Padding(
-          padding:  EdgeInsets.only(left: 5.0),
+         Padding(
+          padding: const EdgeInsets.only(left: 5.0),
           child: Text(
             "Select Per Week",
-            style: TextStyle(fontSize: 15, color: colors.secondary, fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.secColor, fontWeight: FontWeight.w600),
           ),
         ),
         _weeksWidget(),
 
 
-        const Padding(
-          padding:  EdgeInsets.only(left: 5.0),
+         Padding(
+          padding: const EdgeInsets.only(left: 5.0),
           child: Text(
             "Select Time",
-            style: TextStyle(fontSize: 15, color: colors.secondary,
+            style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.secColor,
             fontWeight: FontWeight.w600),
           ),
         ),
@@ -547,7 +547,7 @@ class _AddScheduleState extends State<AddSchedule> {
           padding:  EdgeInsets.only(left: 5.0),
           child: Text(
             "Comment",
-            style: TextStyle(fontSize: 15, color: colors.secondary, fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.secColor, fontWeight: FontWeight.w600),
           ),
         ),
 

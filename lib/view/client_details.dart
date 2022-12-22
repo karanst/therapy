@@ -171,10 +171,10 @@ class _ClientDetailsState extends State<ClientDetails> {
                       child: CircleAvatar(
                         backgroundColor: colors.secondary1,
                         radius: MediaQuery.of(context).size.width * .2,
-                        child: const Text(
+                        child:  Text(
                           "JW",
                           style: TextStyle(
-                              color: colors.secondary,
+                              color: Theme.of(context).colorScheme.secColor,
                               fontSize: 35,
                               fontWeight: FontWeight.w500),
                         ),

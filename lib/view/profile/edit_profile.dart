@@ -65,7 +65,7 @@ class _EditProfileState extends State<EditProfile> {
                 Container(
                   height: MediaQuery.of(context).size.height/3.4,
                   decoration: BoxDecoration(
-                      color: colors.secondary.withOpacity(0.7)
+                      color: Theme.of(context).colorScheme.secColor.withOpacity(0.7)
                   ),
                   // child: Image.asset("assets"),
                 )
