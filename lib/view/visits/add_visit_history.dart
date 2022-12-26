@@ -318,7 +318,7 @@ class _AddVisitHistoryState extends State<AddVisitHistory> {
               child: DropdownButton<String>(
 
                 value: dropdownValue,
-                icon: const Icon(Icons.keyboard_arrow_down_rounded),
+                icon: const Icon(Icons.keyboard_arrow_down_rounded, color: colors.secondary,),
                 elevation: 16,
                 style:  TextStyle(color: Theme.of(context).colorScheme.fontClr,fontWeight: FontWeight.bold),
                 underline: Container(

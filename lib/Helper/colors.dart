@@ -47,7 +47,7 @@ extension colors on ColorScheme {
       this.brightness == Brightness.dark ? whiteTemp : const Color(0xff8e8e8e);
 
   Color get gray =>
-      this.brightness == Brightness.dark ? darkColor3 : const Color(0xffe1e1e1);
+      this.brightness == Brightness.dark ? colors.whit : const Color(0xffe1e1e1);
 
   Color get simmerBase =>
       this.brightness == Brightness.dark ? darkColor2 : Colors.grey[300]!;

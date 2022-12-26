@@ -258,9 +258,7 @@ class _LoginState extends State<Login> {
                     title: "Send Authentication Code",
                     onPress: () {
                       // Navigator.push(context, (MaterialPageRoute(builder: (context) => Verification())));
-
                      sendOtp();
-
                     },
                     height: 50,
                     width: MediaQuery.of(context).size.width,

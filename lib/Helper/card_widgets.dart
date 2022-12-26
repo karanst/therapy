@@ -320,6 +320,7 @@ Widget supportedCard(context, model, i, bool show, bool isSupported) {
                         color: Theme.of(context).colorScheme.fontColor,
                           fontSize: 16, fontWeight: FontWeight.bold),
                     ),
+                   const SizedBox(height: 8,),
                     show ?
                     Text(model[i]['date'],
                     style: TextStyle(
@@ -603,7 +604,7 @@ Widget sessionCard(context, model, i) {
       elevation: 3,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Container(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(5),
         height: 80,
         width: MediaQuery.of(context).size.width,
         // decoration: BoxDecoration(
@@ -618,7 +619,7 @@ Widget sessionCard(context, model, i) {
                 borderRadius: BorderRadius.circular(10)
               ),
               child: Container(
-                width: 50,
+                width: 60,
                 decoration: BoxDecoration(
                   color: colors.secondary1,
                   borderRadius: BorderRadius.circular(10),
@@ -753,8 +754,9 @@ Widget availableCardWidget(context, model, i) {
                      Text(
                       "Time",
                       style: TextStyle(fontWeight: FontWeight.w500,
-                      color: Theme.of(context).colorScheme.fontClr),
+                      color: Theme.of(context).colorScheme.fontColor),
                     ),
+                    const SizedBox(height: 5,),
                     subTitleText("${model[i]['time']}", context, 14),
                   ],
                 ),
@@ -763,8 +765,9 @@ Widget availableCardWidget(context, model, i) {
                      Text(
                       "Date",
                       style: TextStyle(fontWeight: FontWeight.w500,
-                          color: Theme.of(context).colorScheme.fontClr),
+                          color: Theme.of(context).colorScheme.fontColor),
                     ),
+                    const SizedBox(height: 5,),
                     subTitleText("${model[i]['date']}", context, 13),
                   ],
                 ),

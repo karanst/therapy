@@ -16,10 +16,10 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
   int _currentIndex = 0;
 
   List<Map<String, dynamic>> therapists = [
-    {"image": "assets/images/profile2.png", "name": "John Wick", "date": "08 July 2022", },
-    {"image": "assets/images/profile3.png", "name": "Jack Sparrow" , "date": "08 July 2022"},
-    {"image": "assets/images/profile2.png", "name": "Tony Stark" , "date": "08 July 2022"},
-    {"image": "assets/images/profile3.png", "name": "John Dalton" , "date": "08 July 2022"},
+    {"image": "assets/images/people1.png", "name": "John Wick", "date": "08 July 2022", },
+    {"image": "assets/images/people2.png", "name": "Jack Sparrow" , "date": "08 July 2022"},
+    {"image": "assets/images/people1.png", "name": "Tony Stark" , "date": "08 July 2022"},
+    {"image": "assets/images/people2.png", "name": "John Dalton" , "date": "08 July 2022"},
   ];
   _selectTimePeriod() {
     return Padding(
@@ -37,7 +37,7 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
               height: 30,
               width: 100,
               decoration: BoxDecoration(
-                  color: _currentIndex == 0 ? colors.green : Theme.of(context).colorScheme.lightWhite,
+                  color: _currentIndex == 0 ? colors.green : Theme.of(context).colorScheme.gray,
                   borderRadius: BorderRadius.circular(30)),
               child: Center(
                 child: Text(
@@ -45,7 +45,8 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
                   style: TextStyle(
                       color: _currentIndex == 0
                           ? colors.whit
-                          : Theme.of(context).colorScheme.fontClr,
+                          : colors.fntClr,
+                      //Theme.of(context).colorScheme.lightWhite,
                       fontSize: 14),
                 ),
               ),
@@ -61,7 +62,7 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
               height: 30,
               width: 100,
               decoration: BoxDecoration(
-                  color: _currentIndex == 1 ? colors.primary :  Theme.of(context).colorScheme.lightWhite,
+                  color: _currentIndex == 1 ? colors.primary :  Theme.of(context).colorScheme.gray,
                   borderRadius: BorderRadius.circular(30)),
               child: Center(
                 child: Text(
@@ -69,7 +70,7 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
                   style: TextStyle(
                       color: _currentIndex == 1
                           ? colors.whit
-                          : Theme.of(context).colorScheme.fontClr,
+                          : colors.fntClr,
                       fontSize: 14),
                 ),
               ),
@@ -85,7 +86,7 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
               height: 30,
               width: 100,
               decoration: BoxDecoration(
-                  color: _currentIndex == 2 ? colors.red :  Theme.of(context).colorScheme.lightWhite,
+                  color: _currentIndex == 2 ? colors.red :  Theme.of(context).colorScheme.gray,
                   borderRadius: BorderRadius.circular(30)),
               child: Center(
                 child: Text(
@@ -93,7 +94,7 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
                   style: TextStyle(
                       color: _currentIndex == 2
                           ? colors.whit
-                          : Theme.of(context).colorScheme.fontClr,
+                          : colors.fntClr,
                       fontSize: 14),
                 ),
               ),

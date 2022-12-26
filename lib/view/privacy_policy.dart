@@ -26,22 +26,24 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
                   fontSize: 16,
                   fontWeight: FontWeight.w600),
             ),),
+          const SizedBox(height: 10,),
           const  Padding(padding: EdgeInsets.only(left: 12,right: 12,bottom: 8,top: 3),child: Text("Last update 2022",
               style: TextStyle(
                   color: colors.subTxtClr,
                   fontWeight: FontWeight.w500,
                   fontSize: 13)),),
-            Divider(   
+            const Divider(
               height: 4,
               color: colors.subTxtClr,
             ),
+            const SizedBox(height: 10,),
             Container(
               margin: EdgeInsets.only(top: 10),
               padding: EdgeInsets.symmetric(horizontal: 12,),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("1. Using our service",style: TextStyle(color: colors.primary,fontSize: 14,fontWeight: FontWeight.w600),),
+                children: const[
+                   Text("1. Using our service",style: TextStyle(color: colors.primary,fontSize: 14,fontWeight: FontWeight.w600),),
                   SizedBox(height: 8,),
                   Text("Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy and typesetting industry. Lorem Ipsum industry's standard dummy when an unknown printer took a galley of type and scrambled it and typesetting industry. Lorem Ipsum industry's standard dummy since the 1500s, when an unknown printer took a galley of type and scrambled it and typesetting industry. Lorem Ipsum industry's standard dummy since the 1500s, when an unknown printer took a galley of type and scrambled it industry's standard dummy since the 1500s, when an unknown printer took a galley of type and scrambled it and typesetting industry. Lorem Ipsum industry's standard dummy since the 1500s, when an unknown printer took a galley of type and scrambled it",style: TextStyle(
                     color: colors.subTxtClr,
@@ -51,14 +53,14 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 12,),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text("2. Using our service",style: TextStyle(color: colors.primary,fontSize: 14,fontWeight: FontWeight.w600),),
                   SizedBox(height: 8,),
                   Text("Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy and typesetting industry. Lorem Ipsum industry's standard dummy when an unknown printer took a galley of type and scrambled it and typesetting industry. Lorem Ipsum industry's standard dummy since the 1500s, when an unknown printer took a galley of type and scrambled it and typesetting industry. Lorem Ipsum industry's standard dummy since the 1500s, when an unknown printer took a galley of type and scrambled it industry's standard dummy since the 1500s, when an unknown printer took a galley of type and scrambled it and typesetting industry. Lorem Ipsum industry's standard dummy since the 1500s, when an unknown printer took a galley of type and scrambled it",style: TextStyle(

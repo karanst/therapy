@@ -347,7 +347,7 @@ class _AvailabilityState extends State<Availability> {
               child: Column(
                 children: <Widget>[
                   Card(
-                    elevation : 2,
+                    elevation : 1,
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: 50,
@@ -386,6 +386,7 @@ class _AvailabilityState extends State<Availability> {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 15,),
                   Expanded(
                     child: TabBarView(
                       children: <Widget>[

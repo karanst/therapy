@@ -63,12 +63,13 @@ class _EditProfileState extends State<EditProfile> {
                 clipper: SkewCut(),
                 child:
                 Container(
-                  height: MediaQuery.of(context).size.height/3.4,
+                  height: MediaQuery.of(context).size.height/3.0,
                   decoration: BoxDecoration(
                       image: const DecorationImage(
                           image: AssetImage(
                               "assets/images/profile_placeholder.png"
-                          )
+                          ),
+                        fit: BoxFit.fill
                       ),
                       color: Theme.of(context).colorScheme.secColor.withOpacity(0.7)
                   ),
@@ -82,7 +83,7 @@ class _EditProfileState extends State<EditProfile> {
               child: Center(
                 child: CircleAvatar(
                   radius: 50,
-                  child: Image.asset("assets/images/profile_placeholder.png"),
+                  child: Image.asset("assets/images/profile.png"),
                 ),
               ),
             ),

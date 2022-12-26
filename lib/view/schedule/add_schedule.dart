@@ -383,7 +383,7 @@ class _AddScheduleState extends State<AddSchedule> {
         ),
 
         Padding(
-          padding: const EdgeInsets.only(top: 5.0, bottom: 10),
+          padding: const EdgeInsets.only(top: 15.0, bottom: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -397,9 +397,19 @@ class _AddScheduleState extends State<AddSchedule> {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     alignment: Alignment.centerLeft,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(7),
-                        border: Border.all(
-                            color: Theme.of(context).colorScheme.fontClr)),
+                      color: Theme.of(context).colorScheme.lightWhite,
+                      borderRadius: BorderRadius.circular(7),
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 5.0,
+                            offset: Offset(0.75, 0.75)
+                        )
+                      ],
+                      // border: Border.all(
+                      //   color: Theme.of(context).colorScheme.fontClr,
+                      // )
+                    ),
                     child:
                     selectedTime1 != null
                         ?
@@ -407,10 +417,10 @@ class _AddScheduleState extends State<AddSchedule> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("${selectedTime1!.format(context)}",
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.fontClr
-                        ),),
-                           Icon(Icons.access_time,
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.fontClr,
+                          ),),
+                        Icon(Icons.access_time,
                           color: Theme.of(context).colorScheme.fontClr,)
                       ],
                     )
@@ -423,7 +433,7 @@ class _AddScheduleState extends State<AddSchedule> {
                               color: Theme.of(context).colorScheme.fontClr,
                               fontSize: 15),
                         ),
-                           Icon(Icons.access_time,
+                        Icon(Icons.access_time,
                           color: Theme.of(context).colorScheme.fontClr,)
                       ],
                     )),
@@ -452,9 +462,18 @@ class _AddScheduleState extends State<AddSchedule> {
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     alignment: Alignment.centerLeft,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(7),
-                        border: Border.all(
-                            color: Theme.of(context).colorScheme.fontClr)),
+                      borderRadius: BorderRadius.circular(7),
+                      color: Theme.of(context).colorScheme.lightWhite,
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 5.0,
+                            offset: Offset(0.75, 0.75)
+                        )
+                      ],
+                      // border: Border.all(
+                      //   color: Theme.of(context).colorScheme.fontClr,)
+                    ),
                     child:
                     selectedTime2 != null
                         ?
@@ -462,10 +481,10 @@ class _AddScheduleState extends State<AddSchedule> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("${selectedTime2!.format(context)}",
-                        style: TextStyle(
-                          color:  Theme.of(context).colorScheme.fontClr
-                        ),),
-                           Icon(Icons.access_time,
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.fontClr,
+                          ),),
+                        Icon(Icons.access_time,
                           color: Theme.of(context).colorScheme.fontClr,)
                       ],
                     )
@@ -478,8 +497,8 @@ class _AddScheduleState extends State<AddSchedule> {
                               color: Theme.of(context).colorScheme.fontClr,
                               fontSize: 15),
                         ),
-                           Icon(Icons.access_time,
-                          color: Theme.of(context).colorScheme.fontClr,)
+                        const   Icon(Icons.access_time,
+                          color: colors.subTxtClr,)
                       ],
                     )),
                 // TextFormField( controller: locationController,
@@ -544,7 +563,7 @@ class _AddScheduleState extends State<AddSchedule> {
         ),
 
          Padding(
-          padding:  EdgeInsets.only(left: 5.0),
+          padding: const EdgeInsets.only(left: 5.0, bottom: 15),
           child: Text(
             "Comment",
             style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.secColor, fontWeight: FontWeight.w600),
@@ -578,7 +597,7 @@ class _AddScheduleState extends State<AddSchedule> {
             ),
           ),
         ),
-
+        const SizedBox(height: 20,),
         // const Padding(
         //   padding:  EdgeInsets.only(left: 5.0),
         //   child: Text(
