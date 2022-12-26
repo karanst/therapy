@@ -54,7 +54,7 @@ class _EditProfileState extends State<EditProfile> {
 
   _profileHeader(){
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20.0),
+      padding: const EdgeInsets.only(bottom: 5.0),
       child: Container(
         child: Stack(
           alignment: Alignment.center,
@@ -65,6 +65,11 @@ class _EditProfileState extends State<EditProfile> {
                 Container(
                   height: MediaQuery.of(context).size.height/3.4,
                   decoration: BoxDecoration(
+                      image: const DecorationImage(
+                          image: AssetImage(
+                              "assets/images/profile_placeholder.png"
+                          )
+                      ),
                       color: Theme.of(context).colorScheme.secColor.withOpacity(0.7)
                   ),
                   // child: Image.asset("assets"),
@@ -81,6 +86,24 @@ class _EditProfileState extends State<EditProfile> {
                 ),
               ),
             ),
+            Positioned(
+              top: 175,
+              right: 120,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40)
+                ),
+                child: Center(
+                  child: CircleAvatar(
+                    backgroundColor: colors.whit,
+                    radius: 17,
+                    child: Image.asset("assets/icons/camera.png",
+                      height: 20,
+                      width: 20,),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
@@ -99,12 +122,15 @@ class _EditProfileState extends State<EditProfile> {
                 fontSize: 24,
                 fontWeight: FontWeight.w600
             ),),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                subTitleText("Level-3", context, 13),
-                Image.asset('assets/icons/level.png', height: 20,)
-              ],
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  subTitleText("Level-3", context, 13),
+                  Image.asset('assets/icons/level.png', height: 20,)
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 8.0, left: 20, right: 20),
@@ -170,7 +196,7 @@ class _EditProfileState extends State<EditProfile> {
               padding: const EdgeInsets.only(left: 5.0,bottom: 5),
               child: Text(
                 "Phone Number",
-                style: TextStyle(fontSize: 15,color: Theme.of(context).colorScheme.fontClr , fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 15,color: Theme.of(context).colorScheme.fontColor , fontWeight: FontWeight.w500),
               ),
             ),
             Container(
@@ -205,7 +231,7 @@ class _EditProfileState extends State<EditProfile> {
               padding: const EdgeInsets.only(left: 5.0, bottom: 5),
               child: Text(
                 "Email Address",
-                style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.fontClr, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.fontColor, fontWeight: FontWeight.w500),
               ),
             ),
             Container(
@@ -242,7 +268,7 @@ class _EditProfileState extends State<EditProfile> {
                   padding: const EdgeInsets.only(left: 5.0),
                   child: Text(
                     "About me",
-                    style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.fontClr, fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.fontColor, fontWeight: FontWeight.w500),
                   ),
                 ),
                 Padding(
@@ -290,7 +316,7 @@ class _EditProfileState extends State<EditProfile> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 40.0, left: 40),
+              padding: const EdgeInsets.only(right: 40.0, left: 40, bottom: 20),
               child: CustomAppBtn(
                 title: "Back",
                 // icon: Icons.edit,

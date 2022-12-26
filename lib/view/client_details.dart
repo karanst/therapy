@@ -15,6 +15,14 @@ class ClientDetails extends StatefulWidget {
 }
 
 class _ClientDetailsState extends State<ClientDetails> {
+  var items = [
+    'Functional Capacity Assessment',
+    'Ongoing Occupational Therapy',
+    'SIL Assessment',
+    'SDA Assessment'
+  ];
+
+  String? dropdownValue;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +49,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 20.0, right: 20),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
                               height: MediaQuery.of(context).size.height * .12,
@@ -48,7 +57,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                subTitleText("Patient's Name", context, 12),
+                                subTitleText("Patient's Name*", context, 12),
                                 titleText("John Wick", context, 12),
                               ],
                             ),
@@ -58,7 +67,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                subTitleText("Age", context, 12),
+                                subTitleText("Age*", context, 12),
                                 titleText("23", context, 12),
                               ],
                             ),
@@ -68,7 +77,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                subTitleText("Date of Birth", context, 12),
+                                subTitleText("Date of Birth*", context, 12),
                                 titleText("08/07/1997", context, 12),
                               ],
                             ),
@@ -92,15 +101,58 @@ class _ClientDetailsState extends State<ClientDetails> {
                                 titleText("Male", context, 12),
                               ],
                             ),
-                            const SizedBox(
-                              height: 30,
+
+                            Padding(
+                              padding: const EdgeInsets.only(top: 15.0, bottom: 5),
+                              child: subTitleText("Primary Diagnosis", context, 12),
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                titleText("Description", context, 12),
-                              ],
+                            Padding(
+                              padding: const EdgeInsets.only(top: 5.0, bottom: 10),
+                              child: Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(color: Theme.of(context).colorScheme.fontClr,)
+                                ),
+                                height: 50,
+                                width: MediaQuery.of(context).size.width,
+                                child:
+                                // dropdownValue != null ?
+                                DropdownButtonHideUnderline(
+                                  child: DropdownButton<String>(
+
+                                    value: dropdownValue,
+                                    icon: const Icon(Icons.keyboard_arrow_down_rounded),
+                                    elevation: 16,
+                                    style:  TextStyle(color: Theme.of(context).colorScheme.fontClr,fontWeight: FontWeight.bold),
+                                    underline: Container(
+                                      // height: 2,
+                                      color: Colors.black54,
+                                    ),
+                                    onChanged: (String? value) {
+                                      // This is called when the user selects an item.
+                                      setState(() {
+                                        dropdownValue = value!;
+                                      });
+                                    },
+                                    items: items
+                                        .map<DropdownMenuItem<String>>((String value) {
+                                      return DropdownMenuItem<String>(
+                                        value: value,
+                                        child: Text(value),
+                                      );
+                                    }).toList(),
+                                  ),
+                                )
+                                // : Text("Job Type",
+                                // style: TextStyle(
+                                //   fontSize: 12,
+                                //   color: Theme.of(context).colorScheme.fontClr
+                                // ),),
+                              ),
                             ),
+
+                           subTitleText("Description", context, 12),
                             const SizedBox(
                               height: 20,
                             ),

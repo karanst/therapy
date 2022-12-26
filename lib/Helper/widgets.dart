@@ -5,7 +5,7 @@ Text titleText(String data, context, double fSize){
   return Text(data,
   style: TextStyle(
     fontSize: fSize,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w600,
     color: Theme.of(context).colorScheme.fontColor,
   ),);
 }

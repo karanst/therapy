@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:therapy/Helper/card_widgets.dart';
 import 'package:therapy/Helper/colors.dart';
 import 'package:therapy/view/appBar/appBar.dart';
+import 'package:therapy/view/invoice/invoice_details.dart';
 import 'package:therapy/view/visits/visit_history.dart';
 
 class InvoiceHistory extends StatefulWidget {
@@ -117,7 +118,7 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
                 itemBuilder: (context, index){
                   return InkWell(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Visits()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> InvoiceDetails(status: 0,)));
                       },
                       child: invoiceCard(context, therapists, index, true, colors.green, "Paid"));
                 }),
@@ -129,7 +130,7 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
                 itemBuilder: (context, index){
                   return InkWell(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Visits()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> InvoiceDetails(status: 1,)));
                       },
                       child: invoiceCard(context, therapists, index, true, colors.primary, "Pending"));
                 }),
@@ -140,7 +141,7 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
                 itemBuilder: (context, index){
                   return InkWell(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Visits()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> InvoiceDetails(status: 2,)));
                       },
                       child: invoiceCard(context, therapists, index, true, colors.red, "Rejected"));
                 }),

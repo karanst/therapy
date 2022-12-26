@@ -521,10 +521,11 @@ class _HomeState extends State<Home> {
                         "$name"
                             :"Sawan Shakya",
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: colors.secondary,
                           ),) ,
+                      const SizedBox(height: 5,),
                        const Text("7896546544",
                           style: TextStyle(
                             fontSize: 14,
@@ -558,7 +559,7 @@ class _HomeState extends State<Home> {
                 drawerItem('assets/icons/drawer8.png', "Terms & Conditions", (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> TermCondition()));
                 }),
-               const SizedBox(height: 30,),
+               // const SizedBox(height: 30,),
                 drawerItem('assets/icons/drawer9.png', "Logout", (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> Login()));
                 }),

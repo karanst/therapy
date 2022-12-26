@@ -15,10 +15,10 @@ class Schedule extends StatefulWidget {
 class _ScheduleState extends State<Schedule> {
 
   List<Map<String, dynamic>> therapists = [
-    {"image": "assets/images/profile2.png", "name": "John Wick", "date": "08 July 2022"},
-    {"image": "assets/images/profile3.png", "name": "Jack Sparrow" , "date": "08 July 2022"},
-    {"image": "assets/images/profile2.png", "name": "Tony Stark" , "date": "08 July 2022"},
-    {"image": "assets/images/profile3.png", "name": "John Dalton" , "date": "08 July 2022"},
+    {"image": "assets/images/profile2.png", "name": "John Wick", "date": "10:00AM to 12:00PM"},
+    {"image": "assets/images/profile3.png", "name": "Jack Sparrow" , "date": "02:00PM to 03:00PM"},
+    {"image": "assets/images/profile2.png", "name": "Tony Stark" , "date": "04:00PM to 06:00PM"},
+    {"image": "assets/images/profile3.png", "name": "John Dalton" , "date": "06:00PM to 08:00PM"},
   ];
 
   _availableFeature(){

@@ -37,6 +37,9 @@ dependencies:
   provider: ^6.0.4
   google_fonts: ^3.0.1
   flutter_downloader: ^1.9.0
+  dotted_border: ^2.0.0+3
+  dotted_line: ^3.1.0
+
 
 #  firebase_core: ^2.1.1
 #  firebase_messaging: ^14.0.4

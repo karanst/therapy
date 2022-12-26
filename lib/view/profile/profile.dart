@@ -82,12 +82,15 @@ class _ProfileState extends State<Profile> {
             fontSize: 24,
             fontWeight: FontWeight.w600
           ),),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              subTitleText("Level-3", context, 13),
-              Image.asset('assets/icons/level.png', height: 20,)
-            ],
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                subTitleText("Level-3", context, 13),
+                Image.asset('assets/icons/level.png', height: 20,)
+              ],
+            ),
           ),
           Expanded(
             child: ListView(
@@ -150,7 +153,6 @@ class _ProfileState extends State<Profile> {
                     ),
                   ),
                 ),
-
             profileCard(context, 80, "No of Coins", "120", "assets/icons/coins.png"),
             profileCard(context, 80, "No of Stars", "(2/20)",  "assets/icons/stars.png"),
             profileCard(context, 80, "Phone Number", "+61987654321",  "assets/icons/telephone.png"),

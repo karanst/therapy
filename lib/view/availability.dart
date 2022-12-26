@@ -80,8 +80,16 @@ class _AvailabilityState extends State<Availability> {
       padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10, bottom: 10),
       child: Column(
         children: [
-          Card(
-            shape: RoundedRectangleBorder(
+          Container(
+           decoration: BoxDecoration(
+             color: Theme.of(context).colorScheme.lightWhite,
+               boxShadow: <BoxShadow>[
+                 BoxShadow(
+                     color: Colors.grey,
+                     blurRadius: 5.0,
+                     offset: Offset(0.75, 0.75)
+                 )
+               ],
               borderRadius: BorderRadius.circular(10)
             ),
             child: SfDateRangePicker(
@@ -107,7 +115,7 @@ class _AvailabilityState extends State<Availability> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 5.0, bottom: 10),
+            padding: const EdgeInsets.only(top: 15.0, bottom: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -121,9 +129,19 @@ class _AvailabilityState extends State<Availability> {
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       alignment: Alignment.centerLeft,
                       decoration: BoxDecoration(
+                        color: Theme.of(context).colorScheme.lightWhite,
                           borderRadius: BorderRadius.circular(7),
-                          border: Border.all(
-                            color: Theme.of(context).colorScheme.fontClr,)),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 5.0,
+                              offset: Offset(0.75, 0.75)
+                          )
+                        ],
+                          // border: Border.all(
+                          //   color: Theme.of(context).colorScheme.fontClr,
+                          // )
+                      ),
                       child:
                       selectedTime1 != null
                           ?
@@ -177,8 +195,17 @@ class _AvailabilityState extends State<Availability> {
                       alignment: Alignment.centerLeft,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(7),
-                          border: Border.all(
-                            color: Theme.of(context).colorScheme.fontClr,)),
+                        color: Theme.of(context).colorScheme.lightWhite,
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 5.0,
+                              offset: Offset(0.75, 0.75)
+                          )
+                        ],
+                          // border: Border.all(
+                          //   color: Theme.of(context).colorScheme.fontClr,)
+                      ),
                       child:
                       selectedTime2 != null
                           ?
@@ -256,8 +283,16 @@ class _AvailabilityState extends State<Availability> {
       padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10, bottom: 10),
       child: Column(
         children: [
-          Card(
-            shape: RoundedRectangleBorder(
+          Container(
+            decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.lightWhite,
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 5.0,
+                      offset: Offset(0.75, 0.75)
+                  )
+                ],
                 borderRadius: BorderRadius.circular(10)
             ),
             child: SfDateRangePicker(
@@ -272,13 +307,13 @@ class _AvailabilityState extends State<Availability> {
               enablePastDates: false,
               headerHeight: 50,
               headerStyle: const DateRangePickerHeaderStyle(
-                backgroundColor: colors.primary,
-                textAlign: TextAlign.center,
-                textStyle: TextStyle(
-                  color: colors.whit,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600
-                )
+                  backgroundColor: colors.primary,
+                  textAlign: TextAlign.center,
+                  textStyle: TextStyle(
+                      color: colors.whit,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600
+                  )
               ),
             ),
           ),
@@ -311,8 +346,8 @@ class _AvailabilityState extends State<Availability> {
               initialIndex: 0,
               child: Column(
                 children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 0.0),
+                  Card(
+                    elevation : 2,
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       height: 50,

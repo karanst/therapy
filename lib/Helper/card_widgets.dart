@@ -36,8 +36,8 @@ Widget availabilityCard(context, model, i) {
                       const SizedBox(height: 5),
                       Text(model[i]['date'],
                       style: TextStyle(
-                        fontSize: 13,
-                        color: Theme.of(context).colorScheme.fontColor,
+                        fontSize: 12,
+                        color: Theme.of(context).colorScheme.fontClr,
                       ),),
                     ],
                   ),
@@ -281,7 +281,7 @@ Widget profileCard(context, double height, String label, content, iconImage) {
   );
 }
 
-Widget supportedCard(context, model, i, bool show) {
+Widget supportedCard(context, model, i, bool show, bool isSupported) {
   return Padding(
     padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10),
     child: Card(
@@ -338,7 +338,7 @@ Widget supportedCard(context, model, i, bool show) {
               // width: 70,
               decoration: BoxDecoration(
                   color: colors.primary,
-                  borderRadius: BorderRadius.circular(30)),
+                  borderRadius: BorderRadius.circular( isSupported ? 10 :30)),
               child: Center(
                 child: Text(
                   model[i]['status'],
@@ -400,8 +400,9 @@ Widget invoiceCard(context, model, i, bool show, Color color, status) {
                       model[i]['name'],
                       style:  TextStyle(
                           fontSize: 16, fontWeight: FontWeight.w900,
-                          color: Theme.of(context).colorScheme.fontClr),
+                          color: Theme.of(context).colorScheme.fontColor),
                     ),
+                    const SizedBox(height: 5,),
                     show ?
                     Text(model[i]['date']
                     ,style: TextStyle(color: Theme.of(context).colorScheme.fontClr),)
@@ -413,8 +414,8 @@ Widget invoiceCard(context, model, i, bool show, Color color, status) {
             show ?
             Container(
               // alignment: Alignment.centerRight,
-              padding: const EdgeInsets.only(left: 10, right: 10),
-              height: 30,
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              height: 25,
               // width: 70,
               decoration: BoxDecoration(
                   color: color,
@@ -542,7 +543,7 @@ Widget jobDetailsCard(context, model, i,  onPress, bool isNote) {
                           ),
                         ),
                         Icon(
-                          Icons.arrow_forward,
+                          Icons.arrow_forward_ios_rounded,
                           color: Theme.of(context).colorScheme.secColor,
                           size: 18,
                         )
@@ -700,6 +701,7 @@ Widget noteCard(context, model, i){
                   )
                 ],
               ),
+              const SizedBox(height: 10,),
               const Text("Lorem Ipsum is simply dummy text of the Lorem Ipsum is Lorem Ipsum is simply dummy text of",
               maxLines: 3,
               style: TextStyle(

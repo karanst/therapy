@@ -26,7 +26,7 @@ class PeopleSupport extends StatelessWidget {
               onTap: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> Visits()));
               },
-                child: supportedCard(context, supportedPeople, index, true));
+                child: supportedCard(context, supportedPeople, index, true, true));
           }),
     );
   }
