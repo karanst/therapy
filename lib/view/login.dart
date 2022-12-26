@@ -257,8 +257,8 @@ class _LoginState extends State<Login> {
                   child: AppBtn(
                     title: "Send Authentication Code",
                     onPress: () {
-                      // Navigator.push(context, (MaterialPageRoute(builder: (context) => Verification())));
-                     sendOtp();
+                      Navigator.push(context, (MaterialPageRoute(builder: (context) => Verification())));
+                     // sendOtp();
                     },
                     height: 50,
                     width: MediaQuery.of(context).size.width,

@@ -211,16 +211,16 @@ class _VerificationState extends State<Verification> {
                 child: AppBtn(
                   title: "Verify Authentication Code",
                   onPress: (){
-                    // Navigator.push(
-                    //     context, (MaterialPageRoute(builder: (context) => Home())));
+                    Navigator.push(
+                        context, (MaterialPageRoute(builder: (context) => BottomBar())));
 
 
-                    if(widget.otp == pinController.text.toString()){
-                         verifyOtp();
-
-                    }else{
-                      verifyOtp();
-                    }
+                    // if(widget.otp == pinController.text.toString()){
+                    //      verifyOtp();
+                    //
+                    // }else{
+                    //   verifyOtp();
+                    // }
 
                   },
                   height: 50,
