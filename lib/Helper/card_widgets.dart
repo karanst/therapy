@@ -3,10 +3,12 @@ import 'package:therapy/Helper/colors.dart';
 import 'package:therapy/Helper/widgets.dart';
 import 'package:therapy/view/client_details.dart';
 
-Widget availabilityCard(context, model, i) {
+Widget availabilityCard(context, model, i, bool show) {
   return InkWell(
     onTap: (){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=> const ClientDetails()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>  ClientDetails(
+        show : show
+      )));
     },
     child: Padding(
       padding: const EdgeInsets.only(bottom: 10.0),
@@ -78,86 +80,90 @@ Widget availabilityCard(context, model, i) {
 }
 
 Widget leaderCard(context, model, i, rank, coins) {
-  return Column(
-    children: [
-      Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Column(
+  return Padding(
+    padding: const EdgeInsets.only(left: 8.0, right: 18),
+    child: Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+          Row(
             children: [
-              subTitleText("$rank", context, 14),
-              Icon(
-                rank == "2"
-                    ? Icons.arrow_drop_down_outlined
-                    : Icons.arrow_drop_up_outlined,
-                color: rank == "2" ? Colors.red : Colors.green,
-              )
+              Column(
+                children: [
+                  subTitleText("$rank", context, 14),
+                  Icon(
+                    rank == "2"
+                        ? Icons.arrow_drop_down_outlined
+                        : Icons.arrow_drop_up_outlined,
+                    color: rank == "2" ? Colors.red : Colors.green,
+                  )
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: CircleAvatar(
+                  radius: 25,
+                  child: Image.asset(model[i]['image']),
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width / 3,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      model[i]['name'],
+                      style:  TextStyle(
+                          color: Theme.of(context).colorScheme.fontColor,
+                          fontSize: 14, fontWeight: FontWeight.w600),
+                    ),
+                    const SizedBox(height: 5,),
+                    Text(
+                      model[i]['level'],
+                      style:  TextStyle(
+                          fontSize: 10,
+                          color: Theme.of(context).colorScheme.fontColor,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: CircleAvatar(
-              radius: 25,
-              child: Image.asset(model[i]['image']),
-            ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width / 3,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  model[i]['name'],
-                  style:  TextStyle(
-                     color: Theme.of(context).colorScheme.fontColor,
-                      fontSize: 14, fontWeight: FontWeight.w500),
-                ),
-                const SizedBox(height: 5,),
-                Text(
-                  model[i]['level'],
-                  style:  TextStyle(
-                      fontSize: 10,
-                      color: Theme.of(context).colorScheme.fontColor,
-                      fontWeight: FontWeight.w500),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            // alignment: Alignment.centerRight,
-            height: 30,
-            width: 80,
-            decoration: BoxDecoration(
-                color: colors.secondary1,
-                borderRadius: BorderRadius.circular(7)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "${coins} ",
-                  style: const TextStyle(),
-                ),
-                Image.asset(
-                  'assets/images/coin.png',
-                  height: 12,
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-      const SizedBox(
-        height: 5,
-      ),
-     const Padding(
-        padding:  EdgeInsets.only(left: 8.0, right: 18),
-        child:  Divider(
-          height: 10,
-          thickness: 1,
+            Container(
+              // alignment: Alignment.centerRight,
+              height: 30,
+              width: 80,
+              decoration: BoxDecoration(
+                  color: colors.secondary1,
+                  borderRadius: BorderRadius.circular(7)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "${coins.toString()} ",
+                    style: const TextStyle(),
+                  ),
+                  Image.asset(
+                    'assets/images/coin.png',
+                    height: 12,
+                  )
+                ],
+              ),
+            )
+          ],
         ),
-      )
-    ],
+        const SizedBox(
+          height: 5,
+        ),
+      const Divider(
+         height: 10,
+         thickness: 1,
+       )
+      ],
+    ),
   );
 
   //   Padding(
@@ -498,7 +504,7 @@ Widget jobDetailsCard(context, model, i,  onPress, bool isNote) {
                 children: [
                    Text(
                     "Time",
-                    style: TextStyle(fontWeight: FontWeight.w500,color: Theme.of(context).colorScheme.fontColor),
+                    style: TextStyle(fontWeight: FontWeight.w600,color: Theme.of(context).colorScheme.fontColor),
                   ),
                   const SizedBox(height: 8,),
                   subTitleText("${model[i]['time']}", context, 14),
@@ -508,7 +514,7 @@ Widget jobDetailsCard(context, model, i,  onPress, bool isNote) {
                 children: [
                    Text(
                     "Hours",
-                    style: TextStyle(fontWeight: FontWeight.w500,color: Theme.of(context).colorScheme.fontColor),
+                    style: TextStyle(fontWeight: FontWeight.w600,color: Theme.of(context).colorScheme.fontColor),
                   ),
                   const SizedBox(height: 8,),
                   subTitleText("${model[i]['hours']}", context, 14),
@@ -518,7 +524,7 @@ Widget jobDetailsCard(context, model, i,  onPress, bool isNote) {
                 children: [
                    Text(
                     "Date",
-                    style: TextStyle(fontWeight: FontWeight.w500,color: Theme.of(context).colorScheme.fontColor),
+                    style: TextStyle(fontWeight: FontWeight.w600,color: Theme.of(context).colorScheme.fontColor),
                   ),
                   const SizedBox(height: 8,),
                   subTitleText("${model[i]['date']}", context, 13),
@@ -533,19 +539,22 @@ Widget jobDetailsCard(context, model, i,  onPress, bool isNote) {
           const SizedBox(
             height: 15,
           ),
-          Container(
-              padding: const EdgeInsets.all(10),
-              width: MediaQuery.of(context).size.width,
-              height: 80,
-              decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(10)),
-              child: const Center(
-                  child: Text(
-                "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content",
-                maxLines: 4,
-                style: TextStyle(color: colors.subTxtClr, fontSize: 13),
-              ))),
+          Card(
+            elevation: 0,
+            child: Container(
+                padding: const EdgeInsets.all(10),
+                width: MediaQuery.of(context).size.width,
+                height: 80,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.simmerHigh,
+                    borderRadius: BorderRadius.circular(10)),
+                child:  Center(
+                    child: Text(
+                  "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content",
+                  maxLines: 4,
+                  style: TextStyle(color: Theme.of(context).colorScheme.fontClr, fontSize: 13),
+                ))),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -724,10 +733,10 @@ Widget noteCard(context, model, i){
                 ],
               ),
               const SizedBox(height: 10,),
-              const Text("Lorem Ipsum is simply dummy text of the Lorem Ipsum is Lorem Ipsum is simply dummy text of",
+               Text("Lorem Ipsum is simply dummy text of the Lorem Ipsum is Lorem Ipsum is simply dummy text of",
               maxLines: 3,
               style: TextStyle(
-                color: colors.subTxtClr
+                color: Theme.of(context).colorScheme.fontClr
               ),)
             ],
           ),

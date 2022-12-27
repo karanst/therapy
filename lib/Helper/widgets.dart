@@ -90,10 +90,10 @@ Widget leader(bool isLeader, String image, name, rank, coins, context){
           ],
         ),
       ),
-      // SizedBox(height:  isLeader ? 10 : 0,),
+      SizedBox(height:  isLeader ? 10 : 0,),
       Text(name,
       style: TextStyle(
-        fontSize: isLeader ? 15 : 14,
+        fontSize: isLeader ? 16 : 14,
         fontWeight: isLeader ? FontWeight.w600 : FontWeight.w500
       ),),
       Row(

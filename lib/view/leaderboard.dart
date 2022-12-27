@@ -13,10 +13,14 @@ class Leaderboard extends StatefulWidget {
 class _LeaderboardState extends State<Leaderboard> {
   int _currentIndex = 0;
   List<Map<String, dynamic>> therapists = [
-    {"image": "assets/images/profile2.png", "name": "John Wick", "level": "Level-3"},
-    {"image": "assets/images/profile3.png", "name": "Jack Sparrow" , "level": "Level-3"},
-    {"image": "assets/images/profile2.png", "name": "Tony Stark" , "level": "Level-3"},
-    {"image": "assets/images/profile3.png", "name": "John Dalton" , "level": "Level-3"},
+    {"image": "assets/images/profile2.png", "name": "John Wick", "level": "Level-3", "rank" : "4"},
+    {"image": "assets/images/profile3.png", "name": "Jack Sparrow" , "level": "Level-3", "rank" : "5"},
+    {"image": "assets/images/profile2.png", "name": "Tony Stark" , "level": "Level-3", "rank" : "6"},
+    {"image": "assets/images/profile3.png", "name": "John Dalton" , "level": "Level-3", "rank" : "7"},
+    {"image": "assets/images/profile2.png", "name": "John Wick", "level": "Level-3", "rank" : "8"},
+    {"image": "assets/images/profile3.png", "name": "Jack Sparrow" , "level": "Level-3", "rank" : "9"},
+    {"image": "assets/images/profile2.png", "name": "Tony Stark" , "level": "Level-3", "rank" : "10"},
+    {"image": "assets/images/profile3.png", "name": "John Dalton" , "level": "Level-3", "rank" : "11"},
   ];
   _selectTimePeriod() {
     return Padding(
@@ -103,7 +107,7 @@ class _LeaderboardState extends State<Leaderboard> {
 
   _leadersHeader(){
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+      padding: const EdgeInsets.only(left: 25.0,right: 25, top: 10, bottom: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -117,7 +121,7 @@ class _LeaderboardState extends State<Leaderboard> {
 
   _ranking(){
     return Padding(
-      padding: const EdgeInsets.only(top: 17.0),
+      padding: const EdgeInsets.only(top: 10.0),
       child: Container(
         height: MediaQuery.of(context).size.height/1.8,
         width: MediaQuery.of(context).size.width,
@@ -137,6 +141,7 @@ class _LeaderboardState extends State<Leaderboard> {
               top: 30.0, left: 25, right: 25),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text("Current Rank",
               style: TextStyle(
@@ -152,7 +157,7 @@ class _LeaderboardState extends State<Leaderboard> {
                     itemBuilder: (context, index){
                       return leaderCard(
                           context, therapists, index,
-                        "1", "400"
+                        "${therapists[index]['rank']}", "400"
                       );
                     }),
               )
@@ -174,6 +179,7 @@ class _LeaderboardState extends State<Leaderboard> {
             const SizedBox(height: 50,),
             themeTitleText("Leaderboard", context, 26),
             _selectTimePeriod(),
+            const SizedBox(height: 10,),
             _leadersHeader(),
             _ranking()
           ],

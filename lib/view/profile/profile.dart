@@ -42,15 +42,16 @@ class _ProfileState extends State<Profile> {
             ),
 
             Positioned(
-              top: Platform.isAndroid ? 150 : 180,
+              top: Platform.isAndroid ? 120 : 150,
               // left: 120,
               child: Center(
                 child: CircleAvatar(
-                  radius: 50,
+                  radius: 65,
                   child: Image.asset("assets/images/profile.png"),
                 ),
               ),
             ),
+
             // Positioned(
             //   top: 175,
             //   right: 120,

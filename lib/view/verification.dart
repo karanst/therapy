@@ -169,8 +169,8 @@ class _VerificationState extends State<Verification> {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(bottom: 9),
-                        width: 22,
-                        height: 1,
+                        width: 44,
+                        height: 2,
                         color: focusedBorderColor,
                       ),
                     ],

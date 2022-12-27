@@ -251,7 +251,7 @@ class _HomeState extends State<Home> {
               children:  <TextSpan>[
                 TextSpan(text:  name != null ?
                 "$name"
-                    :"Sawan Shakya",
+                    :"Kevin Rock",
                   style:  TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
@@ -432,12 +432,12 @@ class _HomeState extends State<Home> {
         secTitleText("Availability Feature", context, 18),
         const SizedBox(height: 15,),
         ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: therapists.length,
             itemBuilder: (context, index){
           return availabilityCard(
-            context, therapists, index
+            context, therapists, index, true
           );
         })
       ],
@@ -494,83 +494,83 @@ class _HomeState extends State<Home> {
     return Scaffold(
       // backgroundColor: colors.whit,
       key: _scaffoldKey,
-      drawer: Drawer(
-        // backgroundColor: colors.whit,
-        child: Container(
-          // width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage('assets/images/drawer_bg.png')
-            )
-          ),
-          // width: MediaQuery.of(context).size.width/2,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20, top: 40),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    CircleAvatar(
-                      radius: 40,
-                      child: Image.asset("assets/images/user3.png"),
-                    ),
-                   const SizedBox(width: 15,),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(name != null ?
-                        "$name"
-                            :"Sawan Shakya",
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: colors.secondary,
-                          ),) ,
-                      const SizedBox(height: 5,),
-                       const Text("7896546544",
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: colors.fntClr,
-                          ),)
-                        // titleText("7896546544", context, 14)
-
-                      ],
-                    )
-
-                  ],
-                ),
-                const SizedBox(height: 30,),
-                drawerItem('assets/icons/drawer1.png', "Availability", (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Availability()));
-                }),
-                drawerItem('assets/icons/drawer2.png', "Invoice", (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> InvoiceHistory()));
-                }),
-                drawerItem('assets/icons/drawer4.png', "Outlook", (){
-                }),
-                drawerItem('assets/icons/drawer3.png', "Sharepoint", (){}),
-                drawerItem('assets/icons/drawer5.png', "Skool", (){}),
-                drawerItem('assets/icons/drawer6.png', "FAQ", (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> FaqScreen()));
-                }),
-                drawerItem('assets/icons/drawer7.png', "Privacy Policy", (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> PrivacyPolicy()));
-                }),
-                drawerItem('assets/icons/drawer8.png', "Terms & Conditions", (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> TermCondition()));
-                }),
-               // const SizedBox(height: 30,),
-                drawerItem('assets/icons/drawer9.png', "Logout", (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Login()));
-                }),
-
-              ],
-            ),
-          ),
-        ),
-      ),
+      // drawer: Drawer(
+      //   // backgroundColor: colors.whit,
+      //   child: Container(
+      //     // width: MediaQuery.of(context).size.width,
+      //     decoration: const BoxDecoration(
+      //       image: DecorationImage(
+      //         fit: BoxFit.fill,
+      //         image: AssetImage('assets/images/drawer_bg.png')
+      //       )
+      //     ),
+      //     // width: MediaQuery.of(context).size.width/2,
+      //     child: Padding(
+      //       padding: const EdgeInsets.only(left: 20, top: 40),
+      //       child: Column(
+      //         children: [
+      //           Row(
+      //             children: [
+      //               CircleAvatar(
+      //                 radius: 40,
+      //                 child: Image.asset("assets/images/user3.png"),
+      //               ),
+      //              const SizedBox(width: 15,),
+      //               Column(
+      //                 crossAxisAlignment: CrossAxisAlignment.start,
+      //                 children: [
+      //                   Text(name != null ?
+      //                   "$name"
+      //                       :"Kevin Rock",
+      //                     style: const TextStyle(
+      //                       fontSize: 18,
+      //                       fontWeight: FontWeight.bold,
+      //                       color: colors.secondary,
+      //                     ),) ,
+      //                 const SizedBox(height: 5,),
+      //                  const Text("+61987123456",
+      //                     style: TextStyle(
+      //                       fontSize: 14,
+      //                       fontWeight: FontWeight.bold,
+      //                       color: colors.fntClr,
+      //                     ),)
+      //                   // titleText("7896546544", context, 14)
+      //
+      //                 ],
+      //               )
+      //
+      //             ],
+      //           ),
+      //           const SizedBox(height: 30,),
+      //           drawerItem('assets/icons/drawer1.png', "Availability", (){
+      //             Navigator.push(context, MaterialPageRoute(builder: (context)=> Availability()));
+      //           }),
+      //           drawerItem('assets/icons/drawer2.png', "Invoice", (){
+      //             Navigator.push(context, MaterialPageRoute(builder: (context)=> InvoiceHistory()));
+      //           }),
+      //           drawerItem('assets/icons/drawer4.png', "Outlook", (){
+      //           }),
+      //           drawerItem('assets/icons/drawer3.png', "Sharepoint", (){}),
+      //           drawerItem('assets/icons/drawer5.png', "Skool", (){}),
+      //           drawerItem('assets/icons/drawer6.png', "FAQ", (){
+      //             Navigator.push(context, MaterialPageRoute(builder: (context)=> FaqScreen()));
+      //           }),
+      //           drawerItem('assets/icons/drawer7.png', "Privacy Policy", (){
+      //             Navigator.push(context, MaterialPageRoute(builder: (context)=> PrivacyPolicy()));
+      //           }),
+      //           drawerItem('assets/icons/drawer8.png', "Terms & Conditions", (){
+      //             Navigator.push(context, MaterialPageRoute(builder: (context)=> TermCondition()));
+      //           }),
+      //          // const SizedBox(height: 30,),
+      //           drawerItem('assets/icons/drawer9.png', "Logout", (){
+      //             Navigator.push(context, MaterialPageRoute(builder: (context)=> Login()));
+      //           }),
+      //
+      //         ],
+      //       ),
+      //     ),
+      //   ),
+      // ),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
         child: Padding(
@@ -579,8 +579,10 @@ class _HomeState extends State<Home> {
             backgroundColor: Theme.of(context).colorScheme.lightWhite,
             leading: InkWell(
               onTap: (){
+
                 _scaffoldKey.currentState!.openDrawer();
-              },
+
+                },
               child: Padding(
                 padding: const EdgeInsets.only(left: 15.0, top: 8, bottom: 8),
                 child: Container(

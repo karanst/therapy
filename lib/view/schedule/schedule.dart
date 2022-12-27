@@ -34,7 +34,7 @@ class _ScheduleState extends State<Schedule> {
               itemCount: therapists.length,
               itemBuilder: (context, index){
                 return availabilityCard(
-                    context, therapists, index
+                    context, therapists, index, false
                 );
               })
         ],
@@ -91,7 +91,7 @@ class _ScheduleState extends State<Schedule> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: colors.textFieldClr,
+      backgroundColor: Theme.of(context).colorScheme.simmerHigh,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: colors.primary,

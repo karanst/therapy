@@ -160,13 +160,7 @@ class ProfileDetails extends StatelessWidget {
                       child: CircleAvatar(
                         backgroundColor: colors.secondary1,
                         radius: MediaQuery.of(context).size.width * .2,
-                        child: Text(
-                          "JW",
-                          style: TextStyle(
-                              color: Theme.of(context).colorScheme.secColor,
-                              fontSize: 35,
-                              fontWeight: FontWeight.w500),
-                        ),
+                        child: Image.asset("assets/images/profile3.png")
                       ),
                     ),
                   ),

@@ -8,7 +8,8 @@ import 'package:therapy/view/schedule/view_schedule.dart';
 import 'package:therapy/view/visits/add_visit_history.dart';
 
 class ClientDetails extends StatefulWidget {
-  const ClientDetails({Key? key}) : super(key: key);
+  final bool? show;
+  const ClientDetails({Key? key, this.show}) : super(key: key);
 
   @override
   State<ClientDetails> createState() => _ClientDetailsState();
@@ -37,7 +38,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                 Padding(
                   padding: const EdgeInsets.only(top: 80),
                   child: Container(
-                      // height: MediaQuery.of(context).size.height - 97.6 - 80,
+                      height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
                       decoration:  BoxDecoration(
                           // color: Colors.grey,
@@ -101,11 +102,25 @@ class _ClientDetailsState extends State<ClientDetails> {
                                 titleText("Male", context, 12),
                               ],
                             ),
-
+                            const SizedBox(
+                              height: 15,
+                            ),
+                          widget.show == false ?
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                subTitleText("Distance", context, 12),
+                                titleText("7Km", context, 12),
+                              ],
+                            )
+                            : const SizedBox.shrink() ,
+                            widget.show == true ?
                             Padding(
                               padding: const EdgeInsets.only(top: 15.0, bottom: 5),
                               child: subTitleText("Primary Diagnosis", context, 12),
-                            ),
+                            )
+                            : const SizedBox.shrink(),
+                      widget.show == true ?
                             Padding(
                               padding: const EdgeInsets.only(top: 5.0, bottom: 10),
                               child: Container(
@@ -151,8 +166,11 @@ class _ClientDetailsState extends State<ClientDetails> {
                                 //   color: Theme.of(context).colorScheme.fontClr
                                 // ),),
                               ),
+                            )
+                          : const SizedBox.shrink(),
+                            const SizedBox(
+                              height: 15,
                             ),
-
                            subTitleText("Description", context, 12),
                             const SizedBox(
                               height: 20,
@@ -162,7 +180,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                                 width: MediaQuery.of(context).size.width,
                                 height: MediaQuery.of(context).size.height * .23,
                                 decoration: BoxDecoration(
-                                    color: Colors.grey[100],
+                                    color: Theme.of(context).colorScheme.simmerBase,
                                     borderRadius: BorderRadius.circular(10)),
                                 child: const Center(
                                     child: Text(
@@ -173,6 +191,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                                           fontSize: 12,
                                           height: 2),
                                     ))),
+                            widget.show ==  true ?
                             Padding(
                               padding: const EdgeInsets.only(
                                 top: 30,
@@ -186,7 +205,9 @@ class _ClientDetailsState extends State<ClientDetails> {
                                 width: MediaQuery.of(context).size.width,
                                 height: 45,
                               ),
-                            ),
+                            )
+                            : const SizedBox.shrink(),
+                            widget.show ==  true ?
                             Padding(
                               padding: const EdgeInsets.only(bottom: 10.0),
                               child: Row(
@@ -211,6 +232,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                                 ],
                               ),
                             )
+                              : const SizedBox.shrink(),
                           ],
                         ),
                       )),
@@ -224,13 +246,14 @@ class _ClientDetailsState extends State<ClientDetails> {
                       child: CircleAvatar(
                         backgroundColor: colors.secondary1,
                         radius: MediaQuery.of(context).size.width * .2,
-                        child:  Text(
-                          "JW",
-                          style: TextStyle(
-                              color: Theme.of(context).colorScheme.secColor,
-                              fontSize: 35,
-                              fontWeight: FontWeight.w500),
-                        ),
+                        child:  Image.asset("assets/images/profile3.png")
+                        // Text(
+                        //   "JW",
+                        //   style: TextStyle(
+                        //       color: Theme.of(context).colorScheme.secColor,
+                        //       fontSize: 35,
+                        //       fontWeight: FontWeight.w500),
+                        // ),
                       ),
                     ),
                   ),

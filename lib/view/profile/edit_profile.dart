@@ -79,34 +79,31 @@ class _EditProfileState extends State<EditProfile> {
                 )
             ),
 
+
+
             Positioned(
-              top: Platform.isAndroid ? 150 : 180,
+              top: Platform.isAndroid ? 125 : 150,
               // left: 120,
               child: Center(
                 child: CircleAvatar(
-                  radius: 50,
+                  radius: 65,
                   child: Image.asset("assets/images/profile.png"),
                 ),
               ),
             ),
             Positioned(
-              top: Platform.isAndroid ?  210 :230,
-              right: 130,
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40)
-                ),
-                child: Center(
-                  child: CircleAvatar(
-                    backgroundColor: colors.whit,
-                    radius: 17,
-                    child: Image.asset("assets/icons/camera.png",
-                    height: 20,
-                    width: 20,),
-                  ),
+              top: Platform.isAndroid ? 130 : 150,
+              // left: 120,
+              child: Center(
+                child: CircleAvatar(
+                  backgroundColor: Colors.transparent,
+                  radius: 65,
+                  child: Image.asset("assets/icons/camera.png"),
                 ),
               ),
-            )
+            ),
+
+
           ],
         ),
       ),

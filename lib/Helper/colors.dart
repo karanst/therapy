@@ -50,10 +50,10 @@ extension colors on ColorScheme {
       this.brightness == Brightness.dark ? colors.whit : const Color(0xffe1e1e1);
 
   Color get simmerBase =>
-      this.brightness == Brightness.dark ? darkColor2 : Colors.grey[300]!;
+      this.brightness == Brightness.dark ? darkColor2 : Colors.grey[200]!;
 
   Color get simmerHigh =>
-      this.brightness == Brightness.dark ? darkColor : Colors.grey[100]!;
+      this.brightness == Brightness.dark ? darkColor : const Color(0xffF8F8F8);
 
   static Color darkIcon = Color(0xff9B9B9B);
 
