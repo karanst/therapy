@@ -43,7 +43,7 @@ Widget availabilityCard(context, model, i) {
                   ),
                   Container(
                     height: 25,
-                    width: 70,
+                    width: 80,
                     decoration: BoxDecoration(
                         color: colors.primary,
                         borderRadius: BorderRadius.circular(30)),
@@ -367,79 +367,86 @@ Widget supportedCard(context, model, i, bool show, bool isSupported) {
 Widget invoiceCard(context, model, i, bool show, Color color, status) {
   return Padding(
     padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10),
-    child: Card(
-      elevation: 3,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        height: 80,
-        width: MediaQuery.of(context).size.width,
-        // decoration: BoxDecoration(
-        //     // borderRadius: BorderRadius.circular(50)
-        // ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                Container(
-                  height: 60,
-                  width: 60,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      image: DecorationImage(
-                          image: AssetImage(model[i]['image']))),
-                ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      model[i]['name'],
-                      style:  TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.w900,
-                          color: Theme.of(context).colorScheme.fontColor),
-                    ),
-                    const SizedBox(height: 5,),
-                    show ?
-                    Text(model[i]['date']
-                    ,style: TextStyle(color: Theme.of(context).colorScheme.fontClr),)
-                        : const SizedBox.shrink(),
-                  ],
-                ),
-              ],
-            ),
-            show ?
-            Container(
-              // alignment: Alignment.centerRight,
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              height: 25,
-              // width: 70,
-              decoration: BoxDecoration(
-                  color: color,
-                  borderRadius: BorderRadius.circular(30)),
-              child: Center(
-                child: Text(
-                  status,
-                  style: const TextStyle(color: Colors.white),
-                ),
+    child: Container(
+      padding: const EdgeInsets.all(10),
+      height: 80,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Theme.of(context).colorScheme.lightWhite,
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+              color: Colors.grey,
+              blurRadius: 5.0,
+              offset: Offset(0.75, 0.75)
+          )
+        ],
+      ),
+      // decoration: BoxDecoration(
+      //     // borderRadius: BorderRadius.circular(50)
+      // ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Container(
+                height: 60,
+                width: 60,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    image: DecorationImage(
+                        image: AssetImage(model[i]['image']))),
               ),
-            )
-                : const SizedBox.shrink(),
-            // AppBtn(
-            //   title: "View",
-            //   onPress: (){
-            //
-            //   },
-            //   height: 15,
-            //   width: 70,
-            //   fSize: 14,
-            // )
-          ],
-        ),
+              const SizedBox(
+                width: 15,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    model[i]['name'],
+                    style:  TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.w900,
+                        color: Theme.of(context).colorScheme.fontColor),
+                  ),
+                  const SizedBox(height: 5,),
+                  show ?
+                  Text(model[i]['date']
+                  ,style: TextStyle(color: Theme.of(context).colorScheme.fontClr),)
+                      : const SizedBox.shrink(),
+                ],
+              ),
+            ],
+          ),
+          show ?
+          Container(
+            // alignment: Alignment.centerRight,
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            height: 25,
+            // width: 70,
+            decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(30)),
+            child: Center(
+              child: Text(
+                status,
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+          )
+              : const SizedBox.shrink(),
+          // AppBtn(
+          //   title: "View",
+          //   onPress: (){
+          //
+          //   },
+          //   height: 15,
+          //   width: 70,
+          //   fSize: 14,
+          // )
+        ],
       ),
     ),
   );
@@ -448,112 +455,126 @@ Widget invoiceCard(context, model, i, bool show, Color color, status) {
 Widget jobDetailsCard(context, model, i,  onPress, bool isNote) {
   return Padding(
     padding: const EdgeInsets.only(bottom: 15.0),
-    child: Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      elevation: 3,
-      child: Container(
-        padding: const EdgeInsets.all(8),
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 60,
-                  width: 60,
-                  child: Card(
-                    color: colors.secondary1,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)),
-                    child: Center(
-                      child: Text(
-                        "${model[i]['day']}",
-                        style:  TextStyle(
-                            color: Theme.of(context).colorScheme.secColor,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20),
-                      ),
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: Theme.of(context).colorScheme.lightWhite,
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+              color: Colors.grey,
+              blurRadius: 8.0,
+              offset: Offset(0.75, 0.75)
+          )
+        ],
+      ),
+      padding: const EdgeInsets.all(8),
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: 60,
+                width: 60,
+                child: Card(
+                  color: colors.secondary1,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                  child: Center(
+                    child: Text(
+                      "${model[i]['day']}",
+                      style: const TextStyle(
+                          color: colors.secondary,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 20),
                     ),
                   ),
                 ),
-                Column(
-                  children: [
-                    const Text(
-                      "Time",
-                      style: TextStyle(fontWeight: FontWeight.w500,color: colors.subTxtClr),
-                    ),
-                    subTitleText("${model[i]['time']}", context, 14),
-                  ],
-                ),
-                Column(
-                  children: [
-                    const Text(
-                      "Hours",
-                      style: TextStyle(fontWeight: FontWeight.w500,color: colors.subTxtClr),
-                    ),
-                    subTitleText("${model[i]['hours']}", context, 14),
-                  ],
-                ),
-                Column(
-                  children: [
-                    const Text(
-                      "Date",
-                      style: TextStyle(fontWeight: FontWeight.w500,color: colors.subTxtClr),
-                    ),
-                    subTitleText("${model[i]['date']}", context, 13),
-                  ],
-                ),
-              ],
-            ),
-            subTitleText("Description", context, 13),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-                padding: const EdgeInsets.all(10),
-                width: MediaQuery.of(context).size.width,
-                height: 80,
-                decoration: BoxDecoration(
-                    color: Colors.grey[100],
-                    borderRadius: BorderRadius.circular(10)),
-                child: const Center(
-                    child: Text(
-                  "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content",
-                  maxLines: 4,
-                  style: TextStyle(color: colors.subTxtClr, fontSize: 13),
-                ))),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(
-                    onPressed: onPress,
-                    child: Row(
-                      children:  [
-                        isNote ?   Text(
-                          "View Notes",
-                          style: TextStyle(color: Theme.of(context).colorScheme.secColor,
-                          fontWeight: FontWeight.w600),
-                        ):
-                        Text(
-                          "Submit Notes",
-                          style: TextStyle(
-                              color: Theme.of(context).colorScheme.secColor,
-                              fontWeight: FontWeight.w600
-                          ),
+              ),
+
+              Column(
+                children: [
+                   Text(
+                    "Time",
+                    style: TextStyle(fontWeight: FontWeight.w500,color: Theme.of(context).colorScheme.fontColor),
+                  ),
+                  const SizedBox(height: 8,),
+                  subTitleText("${model[i]['time']}", context, 14),
+                ],
+              ),
+              Column(
+                children: [
+                   Text(
+                    "Hours",
+                    style: TextStyle(fontWeight: FontWeight.w500,color: Theme.of(context).colorScheme.fontColor),
+                  ),
+                  const SizedBox(height: 8,),
+                  subTitleText("${model[i]['hours']}", context, 14),
+                ],
+              ),
+              Column(
+                children: [
+                   Text(
+                    "Date",
+                    style: TextStyle(fontWeight: FontWeight.w500,color: Theme.of(context).colorScheme.fontColor),
+                  ),
+                  const SizedBox(height: 8,),
+                  subTitleText("${model[i]['date']}", context, 13),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          subTitleText("Description", context, 13),
+          const SizedBox(
+            height: 15,
+          ),
+          Container(
+              padding: const EdgeInsets.all(10),
+              width: MediaQuery.of(context).size.width,
+              height: 80,
+              decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(10)),
+              child: const Center(
+                  child: Text(
+                "Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content",
+                maxLines: 4,
+                style: TextStyle(color: colors.subTxtClr, fontSize: 13),
+              ))),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              TextButton(
+                  onPressed: onPress,
+                  child: Row(
+                    children:  [
+                      isNote ?   Text(
+                        "View Notes",
+                        style: TextStyle(color: Theme.of(context).colorScheme.secColor,
+                        fontWeight: FontWeight.w600),
+                      ):
+                      Text(
+                        "Submit Notes",
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.secColor,
+                            fontWeight: FontWeight.w600
                         ),
-                        Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Theme.of(context).colorScheme.secColor,
-                          size: 18,
-                        )
-                      ],
-                    ))
-              ],
-            )
-          ],
-        ),
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        color: Theme.of(context).colorScheme.secColor,
+                        size: 18,
+                      )
+                    ],
+                  ))
+            ],
+          )
+        ],
       ),
     ),
   );
@@ -572,7 +593,7 @@ Widget notificationCard(context, model, i) {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            titleText("${model[i]['name']}", context, 13),
+            titleText("${model[i]['name']}", context, 14),
             const SizedBox(height: 5,),
             Container(
               width: MediaQuery.of(context).size.width / 1.5,

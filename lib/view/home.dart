@@ -237,13 +237,13 @@ class _HomeState extends State<Home> {
       child: Row(
         children: [
           CircleAvatar(
-            child: Image.asset('assets/images/profile1.png'),
+            child: Image.asset('assets/images/profile1.png',),
           ),
           const SizedBox(width: 10,),
           RichText(
             text: TextSpan(
               text: 'Hi! ',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.w600,
                 color: colors.primary
@@ -265,13 +265,14 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
   final double circleRadius = 100.0;
   final double circleBorderWidth = 8.0;
   String? name;
 
   _secondHeader(){
     return Padding(
-      padding: const EdgeInsets.only(top: 20.0),
+      padding: const EdgeInsets.only(top: 0.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -283,7 +284,8 @@ class _HomeState extends State<Home> {
           alignment: Alignment.topCenter,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 20
+              padding: const EdgeInsets.only(
+                  top: 25
              // circleRadius / 2.0
               ),
               child:  Container(
@@ -344,7 +346,7 @@ class _HomeState extends State<Home> {
               children: <Widget>[
 
                 Padding(
-                  padding: const EdgeInsets.only(top: 20
+                  padding: const EdgeInsets.only(top: 25
                     // circleRadius / 2.0
                   ),
                   child:  Container(

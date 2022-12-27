@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:therapy/Helper/card_widgets.dart';
 import 'package:therapy/Helper/colors.dart';
@@ -40,7 +42,7 @@ class _ProfileState extends State<Profile> {
             ),
 
             Positioned(
-              top: 120,
+              top: Platform.isAndroid ? 150 : 180,
               // left: 120,
               child: Center(
                 child: CircleAvatar(
@@ -49,24 +51,24 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
             ),
-            Positioned(
-              top: 175,
-              right: 120,
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(40)
-                ),
-                child: Center(
-                  child: CircleAvatar(
-                    backgroundColor: colors.whit,
-                    radius: 17,
-                    child: Image.asset("assets/icons/camera.png",
-                    height: 20,
-                    width: 20,),
-                  ),
-                ),
-              ),
-            )
+            // Positioned(
+            //   top: 175,
+            //   right: 120,
+            //   child: Card(
+            //     shape: RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.circular(40)
+            //     ),
+            //     child: Center(
+            //       child: CircleAvatar(
+            //         backgroundColor: colors.whit,
+            //         radius: 17,
+            //         child: Image.asset("assets/icons/camera.png",
+            //         height: 20,
+            //         width: 20,),
+            //       ),
+            //     ),
+            //   ),
+            // )
           ],
         ),
       ),

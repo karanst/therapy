@@ -119,7 +119,7 @@ class _LeaderboardState extends State<Leaderboard> {
     return Padding(
       padding: const EdgeInsets.only(top: 17.0),
       child: Container(
-        height: MediaQuery.of(context).size.height/2,
+        height: MediaQuery.of(context).size.height/1.8,
         width: MediaQuery.of(context).size.width,
         decoration:  BoxDecoration(
             boxShadow: <BoxShadow>[

@@ -35,7 +35,7 @@ class InvoiceDetails extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.only(top: 25.0, left: 15, right: 15, bottom: 15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -83,7 +83,7 @@ class InvoiceDetails extends StatelessWidget {
                           titleText("Invoice Status", context, 12),
                           Container(
                             height: 25,
-                            padding: const EdgeInsets.only(left: 20, right: 20),
+                            padding: const EdgeInsets.only(left: 25, right: 25),
                             decoration: BoxDecoration(
                               color: status == 0  ?  colors.green :
                                 status == 1 ? colors.primary :
@@ -164,7 +164,7 @@ class InvoiceDetails extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 10.0, bottom: 20),
+              padding: const EdgeInsets.only(top: 25.0, bottom: 20),
               child: titleText("Therapy Duration", context, 20),
             ),
             Row(

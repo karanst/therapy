@@ -126,7 +126,7 @@ class _AddVisitHistoryState extends State<AddVisitHistory> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
          Padding(
-          padding: const EdgeInsets.only(left: 5.0),
+          padding: const EdgeInsets.only(left: 10.0, bottom: 5),
           child: Text(
             "Number of Hours",
             style: TextStyle(
@@ -166,7 +166,7 @@ class _AddVisitHistoryState extends State<AddVisitHistory> {
         ),
 
          Padding(
-          padding: const EdgeInsets.only(left: 5.0),
+          padding: const EdgeInsets.only(left: 10.0,bottom: 5 ),
           child: Text(
             "Therapy Date",
             style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.fontColor,fontWeight: FontWeight.w500),
@@ -232,7 +232,7 @@ class _AddVisitHistoryState extends State<AddVisitHistory> {
         ),
 
          Padding(
-          padding: const EdgeInsets.only(left: 5.0),
+          padding: const EdgeInsets.only(left: 10.0, bottom: 5),
           child: Text(
             "Therapy Time",
             style: TextStyle(fontSize: 15,  color: Theme.of(context).colorScheme.fontColor, fontWeight: FontWeight.w500),
@@ -298,9 +298,9 @@ class _AddVisitHistoryState extends State<AddVisitHistory> {
         ),
 
          Padding(
-          padding: const EdgeInsets.only(left: 5.0),
+          padding: const EdgeInsets.only(left: 10.0, bottom: 5),
           child: Text(
-            "Notes",
+            "Service Type",
             style: TextStyle(fontSize: 15,  color: Theme.of(context).colorScheme.fontColor,fontWeight: FontWeight.w500),
           ),
         ),
@@ -344,7 +344,7 @@ class _AddVisitHistoryState extends State<AddVisitHistory> {
         ),
 
          Padding(
-          padding: const EdgeInsets.only(left: 5.0),
+          padding: const EdgeInsets.only(left: 10.0, bottom: 5),
           child: Text(
             "Purpose of the Session",
             style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.fontColor,fontWeight: FontWeight.w500),
@@ -380,7 +380,7 @@ class _AddVisitHistoryState extends State<AddVisitHistory> {
         ),
 
          Padding(
-          padding: const  EdgeInsets.only(left: 5.0),
+          padding: const  EdgeInsets.only(left: 10.0,bottom: 5),
           child: Text(
             "Plan for future sessions",
             style: TextStyle(

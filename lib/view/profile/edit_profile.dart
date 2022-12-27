@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -69,7 +71,7 @@ class _EditProfileState extends State<EditProfile> {
                           image: AssetImage(
                               "assets/images/profile_placeholder.png"
                           ),
-                        fit: BoxFit.fill
+                          fit: BoxFit.fill
                       ),
                       color: Theme.of(context).colorScheme.secColor.withOpacity(0.7)
                   ),
@@ -78,7 +80,7 @@ class _EditProfileState extends State<EditProfile> {
             ),
 
             Positioned(
-              top: 120,
+              top: Platform.isAndroid ? 150 : 180,
               // left: 120,
               child: Center(
                 child: CircleAvatar(
@@ -88,19 +90,19 @@ class _EditProfileState extends State<EditProfile> {
               ),
             ),
             Positioned(
-              top: 175,
-              right: 120,
+              top: Platform.isAndroid ?  210 :230,
+              right: 130,
               child: Card(
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40)
+                  borderRadius: BorderRadius.circular(40)
                 ),
                 child: Center(
                   child: CircleAvatar(
                     backgroundColor: colors.whit,
                     radius: 17,
                     child: Image.asset("assets/icons/camera.png",
-                      height: 20,
-                      width: 20,),
+                    height: 20,
+                    width: 20,),
                   ),
                 ),
               ),
@@ -189,12 +191,12 @@ class _EditProfileState extends State<EditProfile> {
                 ),
               ),
             ),
-            SizedBox(height: 15,),
+           const SizedBox(height: 30,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
              Padding(
-              padding: const EdgeInsets.only(left: 5.0,bottom: 5),
+              padding: const EdgeInsets.only(left: 15.0,bottom: 5),
               child: Text(
                 "Phone Number",
                 style: TextStyle(fontSize: 15,color: Theme.of(context).colorScheme.fontColor , fontWeight: FontWeight.w500),
@@ -229,7 +231,7 @@ class _EditProfileState extends State<EditProfile> {
             ),
             SizedBox(height: 15,),
              Padding(
-              padding: const EdgeInsets.only(left: 5.0, bottom: 5),
+              padding: const EdgeInsets.only(left: 15.0, bottom: 5),
               child: Text(
                 "Email Address",
                 style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.fontColor, fontWeight: FontWeight.w500),
@@ -266,7 +268,7 @@ class _EditProfileState extends State<EditProfile> {
 
                 SizedBox(height: 15,),
                  Padding(
-                  padding: const EdgeInsets.only(left: 5.0),
+                  padding: const EdgeInsets.only(left: 15.0),
                   child: Text(
                     "About me",
                     style: TextStyle(fontSize: 15, color: Theme.of(context).colorScheme.fontColor, fontWeight: FontWeight.w500),

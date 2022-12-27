@@ -88,7 +88,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 subTitleText("Contact No.", context, 12),
-                                titleText("+91 222233333", context, 12),
+                                titleText("+61 222233333", context, 12),
                               ],
                             ),
                             const SizedBox(

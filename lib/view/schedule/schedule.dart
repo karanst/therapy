@@ -28,7 +28,7 @@ class _ScheduleState extends State<Schedule> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           secTitleText("Today's Schedule", context, 18),
-          const SizedBox(height: 15,),
+          const SizedBox(height: 20,),
           ListView.builder(
               shrinkWrap: true,
               itemCount: therapists.length,

@@ -28,18 +28,24 @@ class _NotificationsState extends State<Notifications> {
     {"image": "assets/images/user3.png",
       "name": "David hop" ,
       "description":"Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content"},
+    {"image": "assets/images/user1.png",
+      "name": "Tom Gill" ,
+      "description":"Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content"},
 
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar("Notifications", context),
-      body: ListView.builder(
-        shrinkWrap: true,
-        itemCount: notifications.length,
-          itemBuilder: (context, index){
-        return notificationCard(context, notifications, index);
-      }),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 20.0),
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: notifications.length,
+            itemBuilder: (context, index){
+          return notificationCard(context, notifications, index);
+        }),
+      ),
     );
   }
 }

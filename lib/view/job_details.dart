@@ -92,7 +92,7 @@ class JobDetails extends StatelessWidget {
                       ),)
                   ],
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(height: 30,),
                 ListView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
